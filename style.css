@@ -1,0 +1,225 @@
+/* Global Styles */
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #f9f9f9;
+    --accent-color: #ff8585;
+    --text-color: #333;
+    --heart-color: #ff5a5a;
+    --success-color: #6bc97f;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6e6;
+    background-image: linear-gradient(45deg, #ffe6e6 25%, #ffccd5 25%, #ffccd5 50%, #ffe6e6 50%, #ffe6e6 75%, #ffccd5 75%, #ffccd5 100%);
+    background-size: 200px 200px;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--heart-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+h1 i {
+    margin: 0 10px;
+    animation: heartbeat 1.5s infinite alternate;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.subtitle {
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Calculator Card Styles */
+.calculator-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+.hearts-between {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 24px;
+    color: var(--heart-color);
+}
+
+.calculate-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.calculate-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+/* Result Styles */
+.result-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #e0e0e0;
+    display: none;
+}
+
+.result-container.visible {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.heart-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 8px rgba(255, 90, 90, 0.3));
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.result-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+footer i {
+    color: var(--heart-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .calculator-card {
+        padding: 20px;
+    }
+    
+    .result-heart {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .percentage {
+        font-size: 1.8rem;
+    }
+}

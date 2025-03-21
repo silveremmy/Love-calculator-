@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heart"></i> Love Calculator <i class="fas fa-heart"></i></h1>
+            <p class="subtitle">Find out your compatibility with your crush or partner!</p>
+        </header>
+        
+        <main class="calculator-card">
+            <div class="form-group">
+                <label for="name1">Your Name:</label>
+                <input type="text" id="name1" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="hearts-between">
+                <i class="fas fa-heart"></i>
+            </div>
+            
+            <div class="form-group">
+                <label for="name2">Partner's Name:</label>
+                <input type="text" id="name2" placeholder="Enter your partner's name" required>
+            </div>
+            
+            <button id="calculate-btn" class="calculate-btn">Calculate Love <i class="fas fa-heartbeat"></i></button>
+            
+            <div class="result-container" id="result-container">
+                <div class="result-heart">
+                    <svg viewBox="0 0 100 100" class="heart-svg">
+                        <path d="M50,90 C100,65 100,25 75,10 C60,0 50,10 50,20 C50,10 40,0 25,10 C0,25 0,65 50,90" fill="#ff5a5a" />
+                    </svg>
+                    <div class="percentage" id="percentage">?</div>
+                </div>
+                <p id="result-text" class="result-text"></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Made with <i class="fas fa-heart"></i> | For Entertainment Purposes Only</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
